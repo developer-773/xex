@@ -1,199 +1,290 @@
+    <!doctype html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link rel="stylesheet" href="/syles.css"> -->
+        <title>Bootstrap Sass &amp; ESM JS</title>
+        <style>
+            :root {
+                --bs-blue: #0d6efd;
+                --bs-indigo: #6610f2;
+                --bs-purple: #6f42c1;
+                --bs-pink: #d63384;
+                --bs-red: #dc3545;
+                --bs-orange: #fd7e14;
+                --bs-yellow: #ffc107;
+                --bs-green: #198754;
+                --bs-teal: #20c997;
+                --bs-cyan: #0dcaf0;
+                --bs-black: #000;
+                --bs-white: #fff;
+                --bs-gray: #6c757d;
+                --bs-gray-dark: #343a40;
+                --bs-gray-100: #f8f9fa;
+                --bs-gray-200: #e9ecef;
+                --bs-gray-300: #dee2e6;
+                --bs-gray-400: #ced4da;
+                --bs-gray-500: #adb5bd;
+                --bs-gray-600: #6c757d;
+                --bs-gray-700: #495057;
+                --bs-gray-800: #343a40;
+                --bs-gray-900: #212529;
+                --bs-primary: #0d6efd;
+                --bs-secondary: #6c757d;
+                --bs-success: #7952b3;
+                --bs-info: #0dcaf0;
+                --bs-warning: #ffc107;
+                --bs-danger: #dc3545;
+                --bs-light: #f8f9fa;
+                --bs-dark: #212529;
+                --bs-primary-rgb: 13, 110, 253;
+                --bs-secondary-rgb: 108, 117, 125;
+                --bs-success-rgb: 121, 82, 179;
+                --bs-info-rgb: 13, 202, 240;
+                --bs-warning-rgb: 255, 193, 7;
+                --bs-danger-rgb: 220, 53, 69;
+                --bs-light-rgb: 248, 249, 250;
+                --bs-dark-rgb: 33, 37, 41;
+                --bs-white-rgb: 255, 255, 255;
+                --bs-black-rgb: 0, 0, 0;
+                --bs-body-color-rgb: 51, 51, 51;
+                --bs-body-bg-rgb: 255, 255, 255;
+                --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+                --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+                --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+                --bs-body-font-family: var(--bs-font-sans-serif);
+                --bs-body-font-size: 1rem;
+                --bs-body-font-weight: 400;
+                --bs-body-line-height: 1.5;
+                --bs-body-color: #333;
+                --bs-body-bg: #fff;
+                --bs-border-width: 1px;
+                --bs-border-style: solid;
+                --bs-border-color: #dee2e6;
+                --bs-border-color-translucent: rgba(0, 0, 0, 0.175);
+                --bs-border-radius: 0.4rem;
+                --bs-border-radius-sm: 0.25rem;
+                --bs-border-radius-lg: 0.5rem;
+                --bs-border-radius-xl: 1rem;
+                --bs-border-radius-2xl: 2rem;
+                --bs-border-radius-pill: 50rem;
+                --bs-link-color: #0d6efd;
+                --bs-link-hover-color: #0a58ca;
+                --bs-code-color: #d63384;
+                --bs-highlight-bg: #fff3cd
+            }
+            
+    .container{
+        width: 1000px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
 
-<!DOCTYPE html>
-<html  manifest="mnf.appcache" lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootstrap Example 2</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-</head>
-<body>
-    <header class="py-2">
-        <nav class="navbar navbar-expand-sm navbar-dark fixed-top bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Carousel</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse" id="navbarCollapse">
-                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled">Disabled</a>
-                        </li>
-                    </ul>
-                    <form class="d-flex" action="http://echo.htmlacademy.ru/courses" method="post" autocomplete="off">
-                        <input class="form-control me-2" type="search" placeholder="Search" >
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <main>
-        <section id="#">
-            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Example headline.</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#555" dy=".3em"></text></svg>
-                        <div class="carousel-caption text-start mb-5 pt-5">
-                            <h2 class="h1 fw-500">Example headline.</h2>
-                            <p class="fs-5">Some representative placeholder content for the first slide.</p>
-                            <button class="btn btn-primary fs-5">Sign up today</button>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#555" dy=".3em"></text></svg>
-                        <div class="carousel-caption  mb-5">
-                            <h2 class="h1 fw-500">Another example headline.</h2>
-                            <p class="fs-5">Some representative placeholder content for the first slide.</p>
-                            <button class="btn btn-primary fs-5">Sign up today</button>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#555" dy=".3em"></text></svg>
-                        <div class="carousel-caption text-end mb-5">
-                            <h2 class="h1 fw-500">One more for good measure.</h2>
-                            <p class="fs-5">Some representative placeholder content for the first slide.</p>
-                            <button class="btn btn-primary fs-5">Sign up today</button>
-                        </div>
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-        </section>
-        <section class="mb-5">
-            <div class="container">
-                <div class="row pt-5 mb-5">
-                    <div class="col-lg-4 text-center mb-5 mb-xl-0">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-aGuPJ5vhzUuFemPTqAO0VmIzXj0Pn1hy7WmMYEvIANe47f0RgT4vx8lDzjWPBcL5p7M&usqp=CAU" width="140" height="140" alt="">
-                        <h3 class="text-secondary fw-normal">Heading</h3>
-                        <p class="text-secondary">
-                            Heading
-                            Some representative placeholder content for the three columns of text below the carousel. This is the first column.
-                        </p>
-                        <a class="btn btn-secondary" href="#">View details »</a>
-                    </div>
-                    <div class="col-lg-4 text-center mb-5 mb-xl-0">
-                        <!-- <span class="d-inline-block bg-secondary rounded-circle " style="width:140px;height:140px;"></span> -->
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-aGuPJ5vhzUuFemPTqAO0VmIzXj0Pn1hy7WmMYEvIANe47f0RgT4vx8lDzjWPBcL5p7M&usqp=CAU" width="140" height="140" alt="">
-                        <h3 class="text-secondary fw-normal">Heading</h3>
-                        <p class="text-secondary">
-                            Heading
-                            Some representative placeholder content for the three columns of text below the carousel. This is the first column.
-                        </p>
-                        <a class="btn btn-secondary" href="#">View details »</a>
-                    </div>
-                    <div class="col-lg-4 text-center mb-5 mb-xl-0">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-aGuPJ5vhzUuFemPTqAO0VmIzXj0Pn1hy7WmMYEvIANe47f0RgT4vx8lDzjWPBcL5p7M&usqp=CAU" width="140" height="140" alt="">
-                        <h3 class="text-secondary fw-normal">Heading</h3>
-                        <p class="text-secondary">
-                            Heading
-                            Some representative placeholder content for the three columns of text below the carousel. This is the first column.
-                        </p>
-                        <a class="btn btn-secondary" href="#">View details »</a>
-                    </div>
-                </div>
-                <hr>
-            </div>
-        </section>
-        <section>
-            <div class="container">
-                <div class="row align-items-center justify-content-between py-5">
-                    <div class="col-sm-12 col-md-6">
-                        <div>
-                            <h2 class="fs-1 text-secondary">First feature heading.<span class="text-secondary opacity-75">It’ll blow your mind.</span></h2>
-                            <p class="text-secondary fs-5">
-                                Some great placeholder content for the first featurette here. Imagine some exciting prose here.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6 text-center mb-5">
-                        <div class="position-relative">
-                            <span class="position-absolute top-50 start-50 translate-middle fs-1 text-secondary">500x500</span>
-                            <img class="img-fluid opacity-25" src="https://www.color-name.com/color-image?c=C3C7C7&square" alt="">
-                        </div>
-                    </div>
-                </div>
-                <hr>
-                <div class="row flex-row-reverse align-items-center justify-content-between py-5">
-                    <div class="col-sm-12 col-md-6 mb-5">
-                        <div>
-                            <h2 class="fs-1 text-secondary">Oh yeah, it’s that good.<span class="text-secondary opacity-75">See for yourself.</span></h2>
-                            <p class="text-secondary fs-5">
-                                Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.
-                            </p>
-                        </div>    
-                    </div>
-                    
-                    <div class="col-sm-12 col-md-6 text-center">
-                        <div class="position-relative">
-                            <span class="position-absolute top-50 start-50 translate-middle fs-1 text-secondary">500x500</span>
-                            <img class="img-fluid opacity-25" src="https://www.color-name.com/color-image?c=C3C7C7&square" alt="">
-                        </div>
-                    </div>
-                </div>
-                <hr>
-                <div class="row align-items-center justify-content-between py-5">
-                    <div class="col-sm-12 col-md-6">
-                        <div>
-                            <h2 class="fs-1 text-secondary">And lastly, this one.<span class="text-secondary opacity-75">Checkmate.
-                            </span></h2>
-                            <p class="text-secondary fs-5">
-                                And yes, this is the last block of representative placeholder content. Again, not really intended to be actually read, simply here to give you a better view of what this would look like with some actual content. Your content.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6 text-center">
-                        <div class="position-relative">
-                            <span class="position-absolute top-50 start-50 translate-middle fs-1 text-secondary">500x500</span>
-                            <img class="img-fluid opacity-25" src="https://www.color-name.com/color-image?c=C3C7C7&square" alt="">
-                        </div>
-                    </div>
-                </div>
-                <hr>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <div class="container">
-            <div class="row flex-column flex-md-row justify-content-between align-items-center my-5">
-                <div class="col-8 col-md-10 col-lg-10">
-                    <div class="d-flex flex-column align-items-center flex-md-row">
-                        <p class="text-secondary mb-0">
-                            © 2017–2022 Company, Inc. 
-                        </p>
-                        <span class="d-none d-md-block ms-2 text-secondary">•</span>
-                        <a class="ms-2 me-2" href="#">Privacy</a>
-                        <span class="d-none d-md-block me-2 text-secondary">•</span>
-                        <a href="#">Terms</a>
-                    </div>
-                </div>
-                <div class="col-4 col-md-2 col-lg-2 text-center">
-                    <a href="#">Back to top
-                    </a>
-                </div>
-            </div>
-        </div> 
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-</body>
-</html>
+            .popover {
+                --bs-popover-zindex: 1070;
+                --bs-popover-max-width: 276px;
+                --bs-popover-font-size: 0.875rem;
+                --bs-popover-bg: #fff;
+                --bs-popover-border-width: 1px;
+                --bs-popover-border-color: var(--bs-border-color-translucent);
+                --bs-popover-border-radius: 0.5rem;
+                --bs-popover-inner-border-radius: calc(0.5rem - 1px);
+                --bs-popover-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+                --bs-popover-header-padding-x: 1rem;
+                --bs-popover-header-padding-y: 0.5rem;
+                --bs-popover-header-font-size: 1rem;
+                --bs-popover-header-color: var(--bs-heading-color);
+                --bs-popover-header-bg: #f0f0f0;
+                --bs-popover-body-padding-x: 1rem;
+                --bs-popover-body-padding-y: 1rem;
+                --bs-popover-body-color: #333;
+                --bs-popover-arrow-width: 1rem;
+                --bs-popover-arrow-height: 0.5rem;
+                --bs-popover-arrow-border: var(--bs-popover-border-color);
+                z-index: var(--bs-popover-zindex);
+                display: block;
+                max-width: var(--bs-popover-max-width);
+                font-family: var(--bs-font-sans-serif);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1.5;
+                text-align: left;
+                text-align: start;
+                text-decoration: none;
+                text-shadow: none;
+                text-transform: none;
+                letter-spacing: normal;
+                word-break: normal;
+                white-space: normal;
+                word-spacing: normal;
+                line-break: auto;
+                font-size: var(--bs-popover-font-size);
+                word-wrap: break-word;
+                background-color: var(--bs-popover-bg);
+                background-clip: padding-box;
+                border: var(--bs-popover-border-width) solid var(--bs-popover-border-color);
+                border-radius: var(--bs-popover-border-radius);
+                box-shadow: var(--bs-popover-box-shadow)
+            }
+            
+            .popover .popover-arrow {
+                display: block;
+                width: var(--bs-popover-arrow-width);
+                height: var(--bs-popover-arrow-height)
+            }
+            
+            .popover .popover-arrow::before,.popover .popover-arrow::after {
+                position: absolute;
+                display: block;
+                content: "";
+                border-color: rgba(0,0,0,0);
+                border-style: solid;
+                border-width: 0
+            }
+            
+            .bs-popover-top>.popover-arrow,.bs-popover-auto[data-popper-placement^=top]>.popover-arrow {
+                bottom: calc(var(--bs-popover-arrow-height)*-1 - var(--bs-popover-border-width))
+            }
+            
+            .bs-popover-top>.popover-arrow::before,.bs-popover-auto[data-popper-placement^=top]>.popover-arrow::before,.bs-popover-top>.popover-arrow::after,.bs-popover-auto[data-popper-placement^=top]>.popover-arrow::after {
+                border-width: var(--bs-popover-arrow-height) calc(var(--bs-popover-arrow-width)*.5) 0
+            }
+            
+            .bs-popover-top>.popover-arrow::before,.bs-popover-auto[data-popper-placement^=top]>.popover-arrow::before {
+                bottom: 0;
+                border-top-color: var(--bs-popover-arrow-border)
+            }
+            
+            .bs-popover-top>.popover-arrow::after,.bs-popover-auto[data-popper-placement^=top]>.popover-arrow::after {
+                bottom: var(--bs-popover-border-width);
+                border-top-color: var(--bs-popover-bg)
+            }
+            
+            .bs-popover-end>.popover-arrow,.bs-popover-auto[data-popper-placement^=right]>.popover-arrow {
+                left: calc(var(--bs-popover-arrow-height)*-1 - var(--bs-popover-border-width));
+                width: var(--bs-popover-arrow-height);
+                height: var(--bs-popover-arrow-width)
+            }
+            
+            .bs-popover-end>.popover-arrow::before,.bs-popover-auto[data-popper-placement^=right]>.popover-arrow::before,.bs-popover-end>.popover-arrow::after,.bs-popover-auto[data-popper-placement^=right]>.popover-arrow::after {
+                border-width: calc(var(--bs-popover-arrow-width)*.5) var(--bs-popover-arrow-height) calc(var(--bs-popover-arrow-width)*.5) 0
+            }
+            
+            .bs-popover-end>.popover-arrow::before,.bs-popover-auto[data-popper-placement^=right]>.popover-arrow::before {
+                left: 0;
+                border-right-color: var(--bs-popover-arrow-border)
+            }
+            
+            .bs-popover-end>.popover-arrow::after,.bs-popover-auto[data-popper-placement^=right]>.popover-arrow::after {
+                left: var(--bs-popover-border-width);
+                border-right-color: var(--bs-popover-bg)
+            }
+            
+            .bs-popover-bottom>.popover-arrow,.bs-popover-auto[data-popper-placement^=bottom]>.popover-arrow {
+                top: calc(var(--bs-popover-arrow-height)*-1 - var(--bs-popover-border-width))
+            }
+            
+            .bs-popover-bottom>.popover-arrow::before,.bs-popover-auto[data-popper-placement^=bottom]>.popover-arrow::before,.bs-popover-bottom>.popover-arrow::after,.bs-popover-auto[data-popper-placement^=bottom]>.popover-arrow::after {
+                border-width: 0 calc(var(--bs-popover-arrow-width)*.5) var(--bs-popover-arrow-height)
+            }
+            
+            .bs-popover-bottom>.popover-arrow::before,.bs-popover-auto[data-popper-placement^=bottom]>.popover-arrow::before {
+                top: 0;
+                border-bottom-color: var(--bs-popover-arrow-border)
+            }
+            
+            .bs-popover-bottom>.popover-arrow::after,.bs-popover-auto[data-popper-placement^=bottom]>.popover-arrow::after {
+                top: var(--bs-popover-border-width);
+                border-bottom-color: var(--bs-popover-bg)
+            }
+            
+            .bs-popover-bottom .popover-header::before,.bs-popover-auto[data-popper-placement^=bottom] .popover-header::before {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                display: block;
+                width: var(--bs-popover-arrow-width);
+                margin-left: calc(var(--bs-popover-arrow-width)*-0.5);
+                content: "";
+                border-bottom: var(--bs-popover-border-width) solid var(--bs-popover-header-bg)
+            }
+            
+            .bs-popover-start>.popover-arrow,.bs-popover-auto[data-popper-placement^=left]>.popover-arrow {
+                right: calc(var(--bs-popover-arrow-height)*-1 - var(--bs-popover-border-width));
+                width: var(--bs-popover-arrow-height);
+                height: var(--bs-popover-arrow-width)
+            }
+            
+            .bs-popover-start>.popover-arrow::before,.bs-popover-auto[data-popper-placement^=left]>.popover-arrow::before,.bs-popover-start>.popover-arrow::after,.bs-popover-auto[data-popper-placement^=left]>.popover-arrow::after {
+                border-width: calc(var(--bs-popover-arrow-width)*.5) 0 calc(var(--bs-popover-arrow-width)*.5) var(--bs-popover-arrow-height)
+            }
+            
+            .bs-popover-start>.popover-arrow::before,.bs-popover-auto[data-popper-placement^=left]>.popover-arrow::before {
+                right: 0;
+                border-left-color: var(--bs-popover-arrow-border)
+            }
+            
+            .bs-popover-start>.popover-arrow::after,.bs-popover-auto[data-popper-placement^=left]>.popover-arrow::after {
+                right: var(--bs-popover-border-width);
+                border-left-color: var(--bs-popover-bg)
+            }
+            
+            .popover-header {
+                padding: var(--bs-popover-header-padding-y) var(--bs-popover-header-padding-x);
+                margin-bottom: 0;
+                font-size: var(--bs-popover-header-font-size);
+                color: var(--bs-popover-header-color);
+                background-color: var(--bs-popover-header-bg);
+                border-bottom: var(--bs-popover-border-width) solid var(--bs-popover-border-color);
+                border-top-left-radius: var(--bs-popover-inner-border-radius);
+                border-top-right-radius: var(--bs-popover-inner-border-radius)
+            }
+            
+            .popover-header:empty {
+                display: none
+            }
+            
+            .popover-body {
+                padding: var(--bs-popover-body-padding-y) var(--bs-popover-body-padding-x);
+                color: var(--bs-popover-body-color)
+            }
+            
+            .text-success {
+                --bs-text-opacity: 1;
+                color: rgba(var(--bs-success-rgb), var(--bs-text-opacity)) !important;
+            }
+            [role=button] {
+                cursor: pointer;
+            }
+            a {
+                color: var(--bs-link-color);
+                text-decoration: underline;
+            }
+            
+        </style>  
+    </head>
+    <body style="margin-top: 200px;">
+        <div class="container py-4 px-3 mx-auto">
+            <a id="popoverButton" class="text-success" href="#" role="button" data-bs-toggle="popover" title="Custom popover" data-bs-content="This popover is created thanks to an ESM shim." style="font-weight:bold; font-size:2rem;">Example popover</a>
+            
+            <script async src="https://ga.jspm.io/npm:es-module-shims@1.5.5/dist/es-module-shims.js"></script>
+            <script type="importmap">
+                {
+                    "imports": {
+                        "@popperjs/core": "https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/esm/popper.js",
+                        "bootstrap": "https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.esm.min.js"
+                    }
+                }
+            </script>
+            <script type="module">
+                import * as bootstrap from 'bootstrap'
+                document.querySelectorAll('[data-bs-toggle="popover"]')
+                .forEach(popover => {
+                    new bootstrap.Popover(popover)
+                })
+            </script>
+            <script type="module" src="js/main.js"></script>
+        </body>
+        </html>
+        
